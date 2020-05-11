@@ -5,10 +5,14 @@ import 'package:my_test_web_app/widgets/pageview_ui.dart';
 import 'background_paint/background_paint.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(MyApp(
+    initialPage: 0,
+  ));
 }
 
 class MyApp extends StatelessWidget {
+  int initialPage;
+  MyApp({@required this.initialPage});
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -18,23 +22,25 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MyHomePage(),
+      home: MyHomePage(initialPage: initialPage,),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
+  int initialPage;
+  MyHomePage({@required this.initialPage});
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
   @override
   Widget build(BuildContext context) {
     return ResponsiveWidget(
       largeScreen: Scaffold(
-          body:  MainPage(initialPage: 0),),
+        body: MainPage(initialPage: widget.initialPage),
+      ),
     );
   }
 }

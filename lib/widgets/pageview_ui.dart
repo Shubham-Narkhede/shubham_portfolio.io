@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:my_test_web_app/hover_effect/mouse_hover.dart';
+import 'package:my_test_web_app/main.dart';
 import 'package:my_test_web_app/responsive_widget/responsive_widget.dart';
+import 'package:my_test_web_app/screens/about_me.dart';
 import 'package:my_test_web_app/screens/home_page.dart';
 
 class MainPage extends StatelessWidget {
@@ -8,30 +12,64 @@ class MainPage extends StatelessWidget {
 
   List<Widget> appbarAction(BuildContext context) {
     return <Widget>[
-      FlatButton(
-          onPressed: () {
-            Navigator.push(
-                context, ScaleRoute(widget: MainPage(initialPage: 0)));
-          },
-          child: Text("Home")),
+      HandCursor(
+        child: FlatButton(
+            hoverColor: Colors.grey.shade50,
+            onPressed: () {
+              Navigator.push(
+                context,
+                PageRouteBuilder(
+                  pageBuilder: (c, a1, a2) => MyApp(initialPage: 0),
+                  transitionsBuilder: (c, anim, a2, child) =>
+                      FadeTransition(opacity: anim, child: child),
+                  transitionDuration: Duration(seconds: 0),
+                ),
+              );
+              // Navigator.push(context, ScaleRoute(widget: MyApp(initialPage: 0)));
+            },
+            child: Text("Home",style: GoogleFonts.slabo27px(color: Colors.black),)),
+      ),
       Container(
         width: 10,
       ),
-      FlatButton(
-          onPressed: () {
-            Navigator.push(
-                context, ScaleRoute(widget: MainPage(initialPage: 1)));
-          },
-          child: Text("About")),
+      HandCursor(
+        child: FlatButton(
+            hoverColor: Colors.grey.shade50,
+            onPressed: () {
+              Navigator.push(
+                context,
+                PageRouteBuilder(
+                  pageBuilder: (c, a1, a2) => MyApp(initialPage: 1),
+                  transitionsBuilder: (c, anim, a2, child) =>
+                      FadeTransition(opacity: anim, child: child),
+                  transitionDuration: Duration(seconds: 1),
+                ),
+              );
+              // Navigator.push(context, ScaleRoute(widget: MyApp(initialPage: 1)));
+            },
+            child: Text("About",style: GoogleFonts.slabo27px(color: Colors.black),)),
+      ),
       Container(
         width: 10,
       ),
-      FlatButton(
-          onPressed: () {
-            Navigator.push(
-                context, ScaleRoute(widget: MainPage(initialPage: 2)));
-          },
-          child: Text("Contact")),
+      HandCursor(
+        child: FlatButton(
+            hoverColor: Colors.grey.shade50,
+            onPressed: () {
+              Navigator.push(
+                context,
+                PageRouteBuilder(
+                  pageBuilder: (c, a1, a2) => MyApp(initialPage: 2),
+                  transitionsBuilder: (c, anim, a2, child) =>
+                      FadeTransition(opacity: anim, child: child),
+                  transitionDuration: Duration(seconds: 2),
+                ),
+              );
+              // Navigator.push(context, ScaleRoute(widget: MyApp(initialPage: 2)));
+            },
+            child: Text("Contact"
+            ,style: GoogleFonts.slabo27px(color: Colors.black),)),
+      ),
       Container(
         width: 50,
       )
@@ -59,23 +97,21 @@ class MainPage extends StatelessWidget {
         centerTitle: true,
         title: Text(
           "My Portfolio",
-          style: TextStyle(color: Colors.black),
+          style: GoogleFonts.bitter(color: Colors.black),
         ),
         actions: !ResponsiveWidget.issmallScreen(context)
             ? appbarAction(context)
             : null,
       ),
-      body:
-      Container(
-
+      body: Container(
         child: PageView(
           scrollDirection: Axis.vertical,
           controller: PageController(
             initialPage: initialPage,
-           ),
+          ),
           children: [
             HomePage(),
-            Container(color: Colors.purpleAccent),
+            AboutMe(),
             Container(color: Colors.greenAccent)
           ],
         ),
