@@ -99,11 +99,10 @@ class MainPage extends StatelessWidget {
   }
 
   launchURL(var launchUrl) async {
-    const url = 'https://flutter.dev';
-    if (await canLaunch(launchUrl)) {
+     if (await canLaunch(launchUrl)) {
       await launch(launchUrl);
     } else {
-      throw 'Could not launch $url';
+      throw 'Could not launch $launchUrl';
     }
   }
 

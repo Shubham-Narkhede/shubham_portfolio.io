@@ -1,12 +1,15 @@
 import 'dart:convert';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:my_test_web_app/hover_effect/image_hover.dart';
+import 'package:my_test_web_app/hover_effect/card_hover.dart';
+import 'package:my_test_web_app/hover_effect/card_image_hover.dart';
 import 'package:my_test_web_app/hover_effect/mouse_hover.dart';
 import 'package:my_test_web_app/hover_effect/slide_right_left.dart';
 import 'package:my_test_web_app/responsive_widget/responsive_widget.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class MyProjects extends StatefulWidget {
   @override
@@ -24,30 +27,24 @@ class _MyProjects extends State<MyProjects> {
     super.initState();
   }
 
-  var jsonResult = [];
+  var projctsData = [];
 
   myProjectsData() async {
     var data =
         await DefaultAssetBundle.of(context).loadString("assets/data.json");
 
     setState(() {
-      jsonResult = json.decode(data);
+      var jsonResult = json.decode(data);
+      projctsData = jsonResult['projects'];
     });
   }
 
-  List<Widget> aboutMe(BuildContext context) {
-    return <Widget>[
-      Text(
-        "Hello",
-        style: GoogleFonts.breeSerif(
-            color: Colors.black,
-            fontSize: !ResponsiveWidget.issmallScreen(context) ? 20 : 14),
-      ),
-      Expanded(
-          child: Padding(
-              padding: EdgeInsets.only(left: 15, right: 15, bottom: 15),
-              child: ImageHover())),
-    ];
+  launchURL(var launchUrl) async {
+    if (await canLaunch(launchUrl)) {
+      await launch(launchUrl);
+    } else {
+      throw 'Could not launch $launchUrl';
+    }
   }
 
   @override
@@ -61,13 +58,13 @@ class _MyProjects extends State<MyProjects> {
         decoration: BoxDecoration(
             image: DecorationImage(
                 image: AssetImage(
-                  "assets/b2.jpg",
+                  "assets/background.png",
                 ),
-                fit: BoxFit.contain)),
+                fit: BoxFit.fill)),
         child: Column(
-          // shrinkWrap: true,
-          mainAxisAlignment: MainAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisSize: MainAxisSize.max,
           children: [
             Container(
               height:
@@ -92,37 +89,213 @@ class _MyProjects extends State<MyProjects> {
                 delay: 1,
               ),
             ),
-
-            // ListView.builder(
-            //   scrollDirection: Axis.horizontal,
-            //   itemCount: jsonResult.length,
-            //   itemBuilder: (BuildContext context, int index) {
-            //     return Container(
-            //       height: 100,
-            //       width: 100,
-            //       child: Column(
-            //         mainAxisSize: MainAxisSize.min,
-            //         children: <Widget>[
-            //           Text(jsonResult[index]['user_name']),
-            //           // Image.network(jsonResult[index]['user_image'])
-            //         ],
-            //       ),
-            //     );
-            //   },
-            // )
             Container(
                 height: !ResponsiveWidget.issmallScreen(context)
                     ? height / 1.5
                     : height / 1.4,
                 child: !ResponsiveWidget.issmallScreen(context)
-                    ? Row(
-                        children: aboutMe(context),
+                    ? Center(
+                        child: Container(
+                          width: width / 1.1,
+                          child: ListView.separated(
+                            padding: EdgeInsets.only(top: 100, bottom: 100),
+                            shrinkWrap: true,
+//                      physics: NeverScrollableScrollPhysics(),
+                            scrollDirection: Axis.horizontal,
+                            itemCount: projctsData.length,
+                            itemBuilder: (BuildContext context, int index) {
+                              return HoverEffect(
+                                  child: InkWell(
+                                child: Container(
+                                    height: height / 8,
+                                    child: Card(
+                                      elevation: 10,
+                                      child: Row(
+                                        children: <Widget>[
+                                          Container(
+                                            width: width / 5,
+                                            child: Column(
+                                              mainAxisSize: MainAxisSize.min,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: <Widget>[
+                                                Padding(
+                                                    padding: EdgeInsets.only(
+                                                        left: 10, right: 10),
+                                                    child: HandCursor(
+                                                      child: FlatButton(
+                                                        hoverColor:
+                                                            Color(0xffCAB3D0),
+                                                        child: Text(
+                                                          projctsData[index]
+                                                              ['project_name'],
+                                                          style: GoogleFonts
+                                                              .josefinSans(
+                                                                  fontSize: 20,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .bold,
+                                                                  color: Color(
+                                                                      0xff33182F)),
+                                                        ),
+                                                        onPressed: () {
+                                                          launchURL(projctsData[
+                                                                  index]
+                                                              ['project_link']);
+                                                        },
+                                                      ),
+                                                    )),
+                                                Container(
+                                                  height: 5,
+                                                ),
+                                                Padding(
+                                                  padding: EdgeInsets.only(
+                                                      left: 10, right: 10),
+                                                  child: Text(
+                                                    projctsData[index]
+                                                        ['project_desc'],
+                                                    style: GoogleFonts.roboto(
+                                                        color:
+                                                            Color(0xff0073AA)),
+                                                  ),
+                                                )
+                                              ],
+                                            ),
+                                          ),
+                                          ImageHoverEffect(
+                                            child: Container(
+                                              color: Colors.lightBlueAccent,
+                                              height: height / 4,
+                                              width: width / 6,
+                                              child: ClipRRect(
+                                                child: Image.network(
+                                                    projctsData[index]
+                                                        ['project_image']),
+                                                borderRadius:
+                                                    BorderRadius.circular(15),
+                                              ),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    )),
+                                onTap: () {
+                                  launchURL(projctsData[index]['project_link']);
+                                },
+                              ));
+                            },
+                            separatorBuilder:
+                                (BuildContext context, int index) {
+                              return Container(
+                                width: 10,
+                              );
+                            },
+                          ),
+                        ),
                       )
-                    : Expanded(
-                        child: ListView(
-                        shrinkWrap: true,
-                        children: aboutMe(context),
-                      ))),
+                    : Flex(
+                        direction: Axis.vertical,
+                        children: [
+                          Expanded(
+                            child: ListView.separated(
+                              padding: EdgeInsets.only(right: 30, left: 30),
+                              shrinkWrap: true,
+                               scrollDirection: Axis.vertical,
+                              itemCount: projctsData.length,
+                              itemBuilder: (BuildContext context, int index) {
+                                return HoverEffect(
+                                    child: InkWell(
+                                  child: Container(
+                                      height: height / 4,
+                                      child: Card(
+                                        elevation: 10,
+                                        child: Row(
+                                          children: <Widget>[
+                                            Container(
+                                              width: width / 2,
+                                              child: Column(
+                                                mainAxisSize: MainAxisSize.min,
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
+                                                children: <Widget>[
+                                                  Padding(
+                                                      padding: EdgeInsets.only(
+                                                          left: 10, right: 10),
+                                                      child: HandCursor(
+                                                        child: FlatButton(
+                                                          hoverColor:
+                                                              Color(0xffCAB3D0),
+                                                          child: Text(
+                                                            projctsData[index][
+                                                                'project_name'],
+                                                            style: GoogleFonts
+                                                                .josefinSans(
+                                                                    fontSize:
+                                                                        20,
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .bold,
+                                                                    color: Color(
+                                                                        0xff33182F)),
+                                                          ),
+                                                          onPressed: () {
+                                                            launchURL(projctsData[
+                                                                    index][
+                                                                'project_link']);
+                                                          },
+                                                        ),
+                                                      )),
+                                                  Container(
+                                                    height: 5,
+                                                  ),
+                                                  Expanded(
+                                                      child: Padding(
+                                                    padding: EdgeInsets.only(
+                                                        left: 10, right: 10),
+                                                    child: Text(
+                                                      projctsData[index]
+                                                          ['project_desc'],
+                                                      style: GoogleFonts.roboto(
+                                                          color: Color(
+                                                              0xff0073AA)),
+                                                    ),
+                                                  ))
+                                                ],
+                                              ),
+                                            ),
+                                            ImageHoverEffect(
+                                              child: Container(
+                                                color: Colors.lightBlueAccent,
+                                                height: height / 4,
+                                                width: width / 3,
+                                                child: ClipRRect(
+                                                  child: Image.network(
+                                                      projctsData[index]
+                                                          ['project_image']),
+                                                  borderRadius:
+                                                      BorderRadius.circular(15),
+                                                ),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      )),
+                                  onTap: () {
+                                    launchURL(
+                                        projctsData[index]['project_link']);
+                                  },
+                                ));
+                              },
+                              separatorBuilder:
+                                  (BuildContext context, int index) {
+                                return Container(
+                                  height: 10,
+                                );
+                              },
+                            ),
+                          )
+                        ],
+                      )),
           ],
         ),
       ),

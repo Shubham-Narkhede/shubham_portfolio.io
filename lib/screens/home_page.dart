@@ -33,9 +33,9 @@ class _HomePage extends State<HomePage> {
       decoration: BoxDecoration(
           image: DecorationImage(
               image: AssetImage(
-                "assets/b2.jpg",
+                "assets/background.png",
               ),
-              fit: BoxFit.contain)),
+              fit: BoxFit.fill)),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,

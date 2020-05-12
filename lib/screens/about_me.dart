@@ -49,9 +49,9 @@ class _AboutMe extends State<AboutMe> {
         decoration: BoxDecoration(
             image: DecorationImage(
                 image: AssetImage(
-                  "assets/b2.jpg",
+                  "assets/background.png",
                 ),
-                fit: BoxFit.contain)),
+                fit: BoxFit.fill)),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
