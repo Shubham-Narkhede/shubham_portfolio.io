@@ -5,6 +5,8 @@ import 'package:my_test_web_app/main.dart';
 import 'package:my_test_web_app/responsive_widget/responsive_widget.dart';
 import 'package:my_test_web_app/screens/about_me.dart';
 import 'package:my_test_web_app/screens/home_page.dart';
+import 'package:my_test_web_app/screens/my_projects.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class MainPage extends StatelessWidget {
   int initialPage;
@@ -14,7 +16,7 @@ class MainPage extends StatelessWidget {
     return <Widget>[
       HandCursor(
         child: FlatButton(
-            hoverColor: Colors.grey.shade50,
+            hoverColor: Colors.blue.shade200,
             onPressed: () {
               Navigator.push(
                 context,
@@ -27,14 +29,17 @@ class MainPage extends StatelessWidget {
               );
               // Navigator.push(context, ScaleRoute(widget: MyApp(initialPage: 0)));
             },
-            child: Text("Home",style: GoogleFonts.slabo27px(color: Colors.black),)),
+            child: Text(
+              "Home",
+              style: GoogleFonts.slabo27px(color: Colors.black),
+            )),
       ),
       Container(
         width: 10,
       ),
       HandCursor(
         child: FlatButton(
-            hoverColor: Colors.grey.shade50,
+            hoverColor: Colors.blue.shade200,
             onPressed: () {
               Navigator.push(
                 context,
@@ -47,14 +52,17 @@ class MainPage extends StatelessWidget {
               );
               // Navigator.push(context, ScaleRoute(widget: MyApp(initialPage: 1)));
             },
-            child: Text("About",style: GoogleFonts.slabo27px(color: Colors.black),)),
+            child: Text(
+              "About",
+              style: GoogleFonts.slabo27px(color: Colors.black),
+            )),
       ),
       Container(
         width: 10,
       ),
       HandCursor(
         child: FlatButton(
-            hoverColor: Colors.grey.shade50,
+            hoverColor: Colors.blue.shade200,
             onPressed: () {
               Navigator.push(
                 context,
@@ -67,13 +75,36 @@ class MainPage extends StatelessWidget {
               );
               // Navigator.push(context, ScaleRoute(widget: MyApp(initialPage: 2)));
             },
-            child: Text("Contact"
-            ,style: GoogleFonts.slabo27px(color: Colors.black),)),
+            child: Text(
+              "Projects",
+              style: GoogleFonts.slabo27px(color: Colors.black),
+            )),
       ),
       Container(
-        width: 50,
-      )
+        width: 10,
+      ),
+      HandCursor(
+        child: FlatButton(
+            hoverColor: Colors.blue.shade200,
+            onPressed: () {
+              launchURL(
+                  "https://firebasestorage.googleapis.com/v0/b/nfanfa-84d2e.appspot.com/o/ShubhamNarkhede.pdf?alt=media&token=79ecac41-a8d0-478e-9832-6e9d85140544");
+            },
+            child: Text(
+              "Resume",
+              style: GoogleFonts.slabo27px(color: Colors.black),
+            )),
+      ),
     ];
+  }
+
+  launchURL(var launchUrl) async {
+    const url = 'https://flutter.dev';
+    if (await canLaunch(launchUrl)) {
+      await launch(launchUrl);
+    } else {
+      throw 'Could not launch $url';
+    }
   }
 
   Widget myDrawer(BuildContext context) {
@@ -89,11 +120,9 @@ class MainPage extends StatelessWidget {
     return Scaffold(
       drawer: myDrawer(context),
       appBar: AppBar(
+        iconTheme: IconThemeData(color: Colors.black),
         elevation: 0.0,
-        backgroundColor: ResponsiveWidget.islargeScreen(context) ||
-                ResponsiveWidget.ismediumScreen(context)
-            ? Colors.white
-            : Colors.red,
+        backgroundColor: Colors.white,
         centerTitle: true,
         title: Text(
           "My Portfolio",
@@ -109,11 +138,7 @@ class MainPage extends StatelessWidget {
           controller: PageController(
             initialPage: initialPage,
           ),
-          children: [
-            HomePage(),
-            AboutMe(),
-            Container(color: Colors.greenAccent)
-          ],
+          children: [HomePage(), AboutMe(), MyProjects()],
         ),
       ),
     );

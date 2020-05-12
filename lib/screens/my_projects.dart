@@ -1,34 +1,47 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:my_test_web_app/hover_effect/image_hover.dart';
 import 'package:my_test_web_app/hover_effect/mouse_hover.dart';
-import 'package:my_test_web_app/hover_effect/slide_left_right.dart';
 import 'package:my_test_web_app/hover_effect/slide_right_left.dart';
 import 'package:my_test_web_app/responsive_widget/responsive_widget.dart';
 
-class AboutMe extends StatefulWidget {
+class MyProjects extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    // TODO: implement createState
-    return _AboutMe();
+    return _MyProjects();
   }
 }
 
-class _AboutMe extends State<AboutMe> {
+class _MyProjects extends State<MyProjects> {
+  @override
+  initState() {
+    setState(() {
+      myProjectsData();
+    });
+    super.initState();
+  }
+
+  var jsonResult = [];
+
+  myProjectsData() async {
+    var data =
+        await DefaultAssetBundle.of(context).loadString("assets/data.json");
+
+    setState(() {
+      jsonResult = json.decode(data);
+    });
+  }
+
   List<Widget> aboutMe(BuildContext context) {
     return <Widget>[
-      Expanded(
-        child: Padding(
-          padding: EdgeInsets.all(15),
-          child: Text(
-            "Hello 👋 I'm Shubham Narkhede, mobile application developer(Flutter, Android and IOS). I am also a youtuber having TurnToStudy youtube channel where I make tutorials for technology like flutter and IOT also. I'm also a Quotes writer and story writer which are published on pratilipi and YourQuotes app.Also write articles related to flutter on Medium. And I would like to be part of an organizaton where I could use and enhance my knowledge and talent for the development of both the organizaton and myself. I liked to enagage with people who likes to learn new new technologies.",
-            style: GoogleFonts.breeSerif(
-                color: Colors.black,
-                // decoration: TextDecoration.underline,
-                fontSize: !ResponsiveWidget.issmallScreen(context) ? 20 : 14),
-          ),
-        ),
+      Text(
+        "Hello",
+        style: GoogleFonts.breeSerif(
+            color: Colors.black,
+            fontSize: !ResponsiveWidget.issmallScreen(context) ? 20 : 14),
       ),
       Expanded(
           child: Padding(
@@ -39,7 +52,6 @@ class _AboutMe extends State<AboutMe> {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
     Color textColor = Colors.black;
@@ -53,6 +65,7 @@ class _AboutMe extends State<AboutMe> {
                 ),
                 fit: BoxFit.contain)),
         child: Column(
+          // shrinkWrap: true,
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -68,7 +81,7 @@ class _AboutMe extends State<AboutMe> {
                     onPressed: () {},
                     hoverColor: Colors.red,
                     child: Text(
-                      "About me!",
+                      "Projects!",
                       style: GoogleFonts.breeSerif(
                           color: textColor,
                           decoration: TextDecoration.underline,
@@ -79,20 +92,37 @@ class _AboutMe extends State<AboutMe> {
                 delay: 1,
               ),
             ),
-            SlideLeftRight(
-              child: Container(
-                  height: !ResponsiveWidget.issmallScreen(context)
-                      ? height / 1.5
-                      : height / 1.4,
-                  child: !ResponsiveWidget.issmallScreen(context)
-                      ? Row(
-                          children: aboutMe(context),
-                        )
-                      : Column(
-                          children: aboutMe(context),
-                        )),
-              delay: 1,
-            ),
+
+            // ListView.builder(
+            //   scrollDirection: Axis.horizontal,
+            //   itemCount: jsonResult.length,
+            //   itemBuilder: (BuildContext context, int index) {
+            //     return Container(
+            //       height: 100,
+            //       width: 100,
+            //       child: Column(
+            //         mainAxisSize: MainAxisSize.min,
+            //         children: <Widget>[
+            //           Text(jsonResult[index]['user_name']),
+            //           // Image.network(jsonResult[index]['user_image'])
+            //         ],
+            //       ),
+            //     );
+            //   },
+            // )
+            Container(
+                height: !ResponsiveWidget.issmallScreen(context)
+                    ? height / 1.5
+                    : height / 1.4,
+                child: !ResponsiveWidget.issmallScreen(context)
+                    ? Row(
+                        children: aboutMe(context),
+                      )
+                    : Expanded(
+                        child: ListView(
+                        shrinkWrap: true,
+                        children: aboutMe(context),
+                      ))),
           ],
         ),
       ),

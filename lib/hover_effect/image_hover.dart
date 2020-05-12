@@ -16,7 +16,7 @@ class _ImageHoverState extends State<ImageHover> {
     return InkWell(
       onTap: () {},
       onHover: (value) {
-        print(value);
+        // print(value);
         if (value) {
           setState(() {
             elevation = 4.0;
@@ -31,34 +31,20 @@ class _ImageHoverState extends State<ImageHover> {
             scale = 1.0;
             translate = Offset(0, 0);
             myColor = Colors.transparent;
-            borderRadius = BorderRadius.all(Radius.circular(40));
+            borderRadius = BorderRadius.all(Radius.circular(200));
           });
         }
       },
       child: Material(
-          elevation: 0.0,
+        borderRadius: borderRadius,
+          elevation: elevation,
           child: ClipRRect(
             borderRadius: borderRadius,
-            child: Image.network(
-              'https://i.ytimg.com/vi/acm9dCI5_dc/maxresdefault.jpg',
-              fit: BoxFit.fill,
+            child: Image.asset(
+              'assets/shubham.jpg',
+              fit: BoxFit.cover,
             ),
           )),
-      // Transform.translate(
-      //   offset: translate,
-      //   child: Transform.scale(
-      //     scale: scale,
-      //     child: Material(
-      //         elevation: elevation,
-      //         child: ClipRRect(
-      //           borderRadius: borderRadius,
-      //           child: Image.network(
-      //             'https://i.ytimg.com/vi/acm9dCI5_dc/maxresdefault.jpg',
-      //             fit: BoxFit.fill,
-      //           ),
-      //         )),
-      //   ),
-      // ),
     );
   }
 }

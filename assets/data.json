@@ -1,0 +1,52 @@
+{
+  "users": [
+    {
+      "user_name": "Tobis",
+      "user_image": "https://avatars0.githubusercontent.com/u/1?v=4"
+    },
+    {
+      "user_name": "Michel",
+      "user_image": "https://avatars0.githubusercontent.com/u/3?v=4"
+    },
+    {
+      "user_name": "Joe",
+      "user_image": "https://avatars0.githubusercontent.com/u/4?v=4"
+    },
+    {
+      "user_name": "Mahi",
+      "user_image": "https://avatars0.githubusercontent.com/u/5?v=4"
+    },
+    {
+      "user_name": "Max",
+      "user_image": "https://avatars0.githubusercontent.com/u/6?v=4"
+    },
+    {
+      "user_name": "Kim",
+      "user_image": "https://avatars0.githubusercontent.com/u/7?v=4"
+    },
+    {
+      "user_name": "Shubham",
+      "user_image": "https://avatars0.githubusercontent.com/u/17?v=4"
+    },
+    {
+      "user_name": "Anish",
+      "user_image": "https://avatars0.githubusercontent.com/u/18?v=4"
+    },
+    {
+      "user_name": "George",
+      "user_image": "https://avatars0.githubusercontent.com/u/19?v=4"
+    },
+    {
+      "user_name": "Byron",
+      "user_image": "https://avatars0.githubusercontent.com/u/20?v=4"
+    },
+    {
+      "user_name": "Lindsay",
+      "user_image": "https://avatars0.githubusercontent.com/u/21?v=4"
+    },
+    {
+      "user_name": "Rachel",
+      "user_image": "https://avatars0.githubusercontent.com/u/22?v=4"
+    }
+  ]
+}
