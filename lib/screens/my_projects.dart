@@ -58,7 +58,7 @@ class _MyProjects extends State<MyProjects> {
         decoration: BoxDecoration(
             image: DecorationImage(
                 image: AssetImage(
-                  "assets/background.png",
+                  "assets/port_b.png",
                 ),
                 fit: BoxFit.fill)),
         child: Column(

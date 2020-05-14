@@ -26,7 +26,7 @@ class _AboutMe extends State<AboutMe> {
             style: GoogleFonts.breeSerif(
                 color: Colors.black,
                 // decoration: TextDecoration.underline,
-                fontSize: !ResponsiveWidget.issmallScreen(context) ? 20 : 14),
+                fontSize: !ResponsiveWidget.issmallScreen(context) ? 20 : 13),
           ),
         ),
       ),
@@ -49,7 +49,7 @@ class _AboutMe extends State<AboutMe> {
         decoration: BoxDecoration(
             image: DecorationImage(
                 image: AssetImage(
-                  "assets/background.png",
+                  "assets/port_b.png",
                 ),
                 fit: BoxFit.fill)),
         child: Column(
