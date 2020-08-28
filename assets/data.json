@@ -1,10 +1,22 @@
 {
   "projects": [
     {
-      "project_name": "Worshapp Android",
-      "project_desc": "Worshapp is an event application for those who want to organise events and join events.",
-      "project_image": "https://firebasestorage.googleapis.com/v0/b/nfanfa-84d2e.appspot.com/o/worshapp%20(1).png?alt=media&token=aa0732b0-0803-4818-b8bc-039d6f1c5f75",
-      "project_link": "https://play.google.com/store/apps/details?id=com.worshapp.events"
+      "project_name": "Janmakundali Android",
+      "project_desc": "Janmakundali is a application in that you will see your daily horoscope and kundali.",
+      "project_image": "https://is2-ssl.mzstatic.com/image/thumb/Purple124/v4/bd/df/11/bddf1182-8b96-4916-4ff2-f1f190979ae4/AppIcon-0-0-1x_U007emarketing-0-0-0-7-0-85-220.png/246x0w.png",
+      "project_link": "https://play.google.com/store/apps/details?id=com.janmakundali.horoscope"
+    },
+    {
+      "project_name": "Janmakundali IOS",
+      "project_desc": "Janmakundali is a application in that you will see your daily horoscope and kundali.",
+      "project_image": "https://is2-ssl.mzstatic.com/image/thumb/Purple124/v4/bd/df/11/bddf1182-8b96-4916-4ff2-f1f190979ae4/AppIcon-0-0-1x_U007emarketing-0-0-0-7-0-85-220.png/246x0w.png",
+      "project_link": "https://apps.apple.com/in/app/janmakundali-panchang/id1440463337"
+    },
+    {
+      "project_name": "Ichigo - Build your awareness",
+      "project_desc": "Ichigo is small informatical application which include food, fashion etc information.",
+      "project_image": "https://images-eu.ssl-images-amazon.com/images/I/41CAiXbUPfL.png",
+      "project_link": "https://play.google.com/store/apps/details?id=inco.ichigo.ichigo_app"
     },
     {
       "project_name": "Worshapp IOS",

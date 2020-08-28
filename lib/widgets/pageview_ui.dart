@@ -88,7 +88,7 @@ class MainPage extends StatelessWidget {
             hoverColor: Colors.blue.shade200,
             onPressed: () {
               launchURL(
-                  "https://firebasestorage.googleapis.com/v0/b/nfanfa-84d2e.appspot.com/o/ShubhamNarkhede.pdf?alt=media&token=79ecac41-a8d0-478e-9832-6e9d85140544");
+                  "https://firebasestorage.googleapis.com/v0/b/nfanfa-84d2e.appspot.com/o/ShubhamNarkhede.pdf?alt=media&token=08db6251-c55b-4e58-998d-384e67721233");
             },
             child: Text(
               "Resume",
@@ -99,7 +99,7 @@ class MainPage extends StatelessWidget {
   }
 
   launchURL(var launchUrl) async {
-     if (await canLaunch(launchUrl)) {
+    if (await canLaunch(launchUrl)) {
       await launch(launchUrl);
     } else {
       throw 'Could not launch $launchUrl';
