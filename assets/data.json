@@ -1,46 +1,60 @@
 {
   "projects": [
     {
-      "project_name": "Janmakundali Android",
-      "project_desc": "Janmakundali is a application in that you will see your daily horoscope and kundali.",
+      "project_name": "Janmakundali",
+      "project_desc": "Janmakundali application is depend on horoscope and astrology. You can  see your daily horoscope and your panchang with this application. Also there are some stotram audios  and some videos of festival information. You will buy there services from application like baby names for new born baby, vastu for your home etc.",
       "project_image": "https://is2-ssl.mzstatic.com/image/thumb/Purple124/v4/bd/df/11/bddf1182-8b96-4916-4ff2-f1f190979ae4/AppIcon-0-0-1x_U007emarketing-0-0-0-7-0-85-220.png/246x0w.png",
-      "project_link": "https://play.google.com/store/apps/details?id=com.janmakundali.horoscope"
+      "project_link": "https://play.google.com/store/apps/details?id=com.janmakundali.horoscope",
+      "ios": "https://apps.apple.com/in/app/janmakundali-panchang/id1440463337"
     },
     {
-      "project_name": "Janmakundali IOS",
-      "project_desc": "Janmakundali is a application in that you will see your daily horoscope and kundali.",
-      "project_image": "https://is2-ssl.mzstatic.com/image/thumb/Purple124/v4/bd/df/11/bddf1182-8b96-4916-4ff2-f1f190979ae4/AppIcon-0-0-1x_U007emarketing-0-0-0-7-0-85-220.png/246x0w.png",
-      "project_link": "https://apps.apple.com/in/app/janmakundali-panchang/id1440463337"
-    },
-    {
-      "project_name": "Ichigo - Build your awareness",
-      "project_desc": "Ichigo is small informatical application which include food, fashion etc information.",
-      "project_image": "https://images-eu.ssl-images-amazon.com/images/I/41CAiXbUPfL.png",
-      "project_link": "https://play.google.com/store/apps/details?id=inco.ichigo.ichigo_app"
-    },
-    {
-      "project_name": "Worshapp IOS",
-      "project_desc": "Worshapp is an event application for those who want to organise events and join events.",
+      "project_name": "Worshapp",
+      "project_desc": "A worshapp is an Event application. User can add events with respect to location from event. User may edit event. Added get direction facility of event display exact location on google map of that event. User can authnticate with social media etc.",
       "project_image": "https://firebasestorage.googleapis.com/v0/b/nfanfa-84d2e.appspot.com/o/worshapp%20(1).png?alt=media&token=aa0732b0-0803-4818-b8bc-039d6f1c5f75",
-      "project_link": "https://apps.apple.com/us/app/worshapp/id1499607116"
+      "project_link": "https://play.google.com/store/apps/details?id=com.worshapp.events",
+      "ios": "https://apps.apple.com/us/app/worshapp/id1499607116"
     },
     {
-      "project_name": "Hii Chat",
-      "project_desc": "This application is based on whatsapp. You send message on whatsapp without saving mobile number in your phone",
-      "project_image": "https://firebasestorage.googleapis.com/v0/b/nfanfa-84d2e.appspot.com/o/hiichat%20(1).png?alt=media&token=8b315d19-7817-4af4-8481-c2902f639ea2",
-      "project_link": "https://play.google.com/store/apps/details?id=com.shubham.flutter_whats_me"
+      "project_name": "Shree Aniruddha acharya Ji Maharaj",
+      "project_desc": "Shri Aniruddhacharya Ji Official this app is one of the Spiritual Application. In that we shows motivational quotes, videos articles etc. In that we added live youtube videos which explains Shree BhagwatGita etc. Also in that donate section for paying money to some NGO’s.",
+      "project_image": "https://play-lh.googleusercontent.com/kt_7_4CkkLCCWmZk4MQDjebWx5PODa03B0MZOoQ4wiHtGF6jN3n52Cqm4M7tB71_SOI=w240-h480-rw",
+      "project_link": "https://play.google.com/store/apps/details?id=shree.anirudhacharyaji.shreeanirudhacharyaji",
+      "ios": "https://apps.apple.com/us/app/id1531754403"
+    },
+    {
+      "project_name": "Posta-MikMik",
+      "project_desc": "Digital way of courier services we played by this application.",
+      "project_image": "https://play-lh.googleusercontent.com/97fCuJYvD8vMKaZJrbxxR_oafY5PCYBasXPeH8vGnUJ50umTiTTd8KEDkVDLf7ejTU2L=w240-h480-rw",
+      "project_link": "https://play.google.com/store/apps/details?id=com.app.mikmik",
+      "ios": "https://apps.apple.com/tt/app/posta-mikmik/id1602585405"
+    },
+    {
+      "project_name": "Adam Companies – Technician App",
+      "project_desc": "The Technician app is app for technicians. This application is like  a Urban Clap application. If people facing any issues at there home, in water supply, in electic etc., Then they will add this issue in consumer app and then admin will assign some technicians for this service. Then technician will send some quotation, then accept or decline this service. If accept then go to consumer home with the help of google map route. And complete this service.",
+      "project_image": "https://play-lh.googleusercontent.com/HhQuE-rzv-Q4_-n_2V3ULltU3qcl6f7qHF-bWMvsDcpX6mtOKvYuNo4_NcSF2cV7HPY=w240-h480-rw",
+      "project_link": "https://play.google.com/store/apps/details?id=com.adamcompanies.technicianapp",
+      "ios": "https://apps.apple.com/us/app/id1531754403"
+    },
+    {
+      "project_name": "FMS App",
+      "project_desc": "This application is based on agribusinesses and their associated farmers, helping them in identifying and removing inefficiencies in their operations and also saving cost for the farmers.",
+      "project_image": "https://play-lh.googleusercontent.com/sYPux9iD41exPzPV1Kb0ZJAmuVRFp3hNVUHDMR_9V8hl8z8q_L_xqHQO0wRXG1mgkO1w=w240-h480-rw",
+      "project_link": "https://play.google.com/store/apps/details?id=com.vesatogo.fleet_app",
+      "ios": ""
     },
     {
       "project_name": "Whatsapp Clone",
       "project_desc": "Whatsapp clone made in flutter",
       "project_image": "https://firebasestorage.googleapis.com/v0/b/nfanfa-84d2e.appspot.com/o/whatsapp.png?alt=media&token=de055c4a-e568-4887-a1ec-88c69ace9d96",
-      "project_link": "https://github.com/Shubham-Narkhede/whatsapp_clone_flutter"
+      "project_link": "https://github.com/Shubham-Narkhede/whatsapp_clone_flutter",
+      "ios": ""
     },
     {
       "project_name": "Map Route",
       "project_desc": "Source to Destination Draw Route on google map in flutter",
       "project_image": "https://firebasestorage.googleapis.com/v0/b/nfanfa-84d2e.appspot.com/o/srctodest.png?alt=media&token=f3f710c2-90a6-4bad-8d36-06f3a544715d",
-      "project_link": "https://github.com/Shubham-Narkhede/flutter_google_map_route"
+      "project_link": "https://github.com/Shubham-Narkhede/flutter_google_map_route",
+      "ios": ""
     }
   ]
 }
