@@ -21,11 +21,10 @@ class _AboutMe extends State<AboutMe> {
         child: Padding(
           padding: EdgeInsets.all(15),
           child: Text(
-            "Hello 👋 I'm Shubham Narkhede, mobile application developer(Flutter, Android and IOS). I am also a youtuber having TurnToStudy youtube channel where I make tutorials for technology like flutter and IOT also. I'm also a Quotes writer and story writer which are published on pratilipi and YourQuotes app.Also write articles related to flutter on Medium. And I would like to be part of an organizaton where I could use and enhance my knowledge and talent for the development of both the organizaton and myself. I liked to enagage with people who likes to learn new new technologies.",
+            "Hello 👋 I'm Shubham Narkhede, mobile application developer. Having 3+ years of experience in software industry. In those year i completed almost 12-13 apps👑 which are currently live on app store and play store. Mainly I worked on Flutter technology but having experience of Android(java) as well. Also write articles related to flutter on Medium. And I would like to be part of an organization where I could use and enhance my knowledge and talent for the development of both the organization and myself. I liked to engage with people who likes to learn new new technologies.",
             style: GoogleFonts.breeSerif(
                 color: Colors.black,
-                // decoration: TextDecoration.underline,
-                fontSize: !ResponsiveWidget.issmallScreen(context) ? 20 : 13),
+                fontSize: !ResponsiveWidget.issmallScreen(context) ? 20 : 16),
           ),
         ),
       ),
