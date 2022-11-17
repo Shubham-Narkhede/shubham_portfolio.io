@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:my_test_web_app/responsive_widget/responsive_widget.dart';
 import 'package:my_test_web_app/widgets/pageview_ui.dart';
 
-import 'background_paint/background_paint.dart';
-
 void main() {
   runApp(MyApp(
     initialPage: 0,

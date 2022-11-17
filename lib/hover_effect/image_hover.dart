@@ -36,12 +36,12 @@ class _ImageHoverState extends State<ImageHover> {
         }
       },
       child: Material(
-        borderRadius: borderRadius,
+          borderRadius: borderRadius,
           elevation: elevation,
           child: ClipRRect(
             borderRadius: borderRadius,
-            child: Image.asset(
-              'assets/shubham.jpg',
+            child: Image.network(
+              'https://media-exp1.licdn.com/dms/image/C5603AQGm2n2rTt2vJw/profile-displayphoto-shrink_800_800/0/1626281255153?e=2147483647&v=beta&t=xGHXusFrCBf2g0Xwi4rH9nawoKo21lEF3-lKbBWxEjk',
               fit: BoxFit.cover,
             ),
           )),

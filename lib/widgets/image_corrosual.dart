@@ -5,7 +5,6 @@ final List<String> imgList = [
   'assets/flutter.png',
   'assets/android.png',
   'assets/ios.png',
-  'assets/angular.png',
   'assets/js.png',
 ];
 

@@ -10,7 +10,6 @@ import 'package:my_test_web_app/responsive_widget/responsive_widget.dart';
 class AboutMe extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    // TODO: implement createState
     return _AboutMe();
   }
 }
@@ -39,7 +38,6 @@ class _AboutMe extends State<AboutMe> {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
     Color textColor = Colors.black;

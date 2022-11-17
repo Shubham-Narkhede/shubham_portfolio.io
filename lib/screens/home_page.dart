@@ -8,7 +8,6 @@ import 'package:url_launcher/url_launcher.dart';
 class HomePage extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    // TODO: implement createState
     return _HomePage();
   }
 }
@@ -40,9 +39,6 @@ class _HomePage extends State<HomePage> {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          // Container(
-          //   height: height * 0.06,
-          // ),
           Text(
             "Hiii, I'm Shubham Narkhede!",
             style: GoogleFonts.averiaSansLibre(
@@ -84,7 +80,7 @@ class _HomePage extends State<HomePage> {
                       textStyle: GoogleFonts.roboto(color: Colors.black),
                       child: FloatingActionButton(
                         heroTag: "mytag1",
-                        child: Image.asset("assets/github.png"),
+                        child: Image.asset("assets/github.png", color: Colors.white,),
                         hoverColor: Colors.blue,
                         onPressed: () {
                           launchURL("https://github.com/Shubham-Narkhede");
@@ -102,7 +98,7 @@ class _HomePage extends State<HomePage> {
                       textStyle: GoogleFonts.roboto(color: Colors.black),
                       child: FloatingActionButton(
                         heroTag: "mytag2",
-                        child: Image.asset("assets/medium.png"),
+                        child: Image.asset("assets/medium.png", color: Colors.white,),
                         hoverColor: Colors.blue,
                         onPressed: () {
                           launchURL("https://medium.com/@shubham.narkhede8");
@@ -120,7 +116,7 @@ class _HomePage extends State<HomePage> {
                       textStyle: GoogleFonts.roboto(color: Colors.black),
                       child: FloatingActionButton(
                         heroTag: "mytag3",
-                        child: Image.asset("assets/twitter.png"),
+                        child: Image.asset("assets/s_3.png"),
                         hoverColor: Colors.blue,
                         onPressed: () {
                           launchURL("https://twitter.com/ShubhamNarkhe14");
@@ -167,7 +163,7 @@ class _HomePage extends State<HomePage> {
                       textStyle: GoogleFonts.roboto(color: Colors.black),
                       child: FloatingActionButton(
                         heroTag: "mytag5",
-                        child: Image.asset("assets/link.png"),
+                        child: Image.asset("assets/s_4.png"),
                         hoverColor: Colors.blue,
                         onPressed: () {
                           launchURL(
@@ -186,7 +182,7 @@ class _HomePage extends State<HomePage> {
                       textStyle: GoogleFonts.roboto(color: Colors.black),
                       child: FloatingActionButton(
                         heroTag: "mytag6",
-                        child: Image.asset("assets/fb.png"),
+                        child: Image.asset("assets/s_1.png"),
                         hoverColor: Colors.blue,
                         onPressed: () {
                           launchURL(
@@ -205,11 +201,11 @@ class _HomePage extends State<HomePage> {
                       textStyle: GoogleFonts.roboto(color: Colors.black),
                       child: FloatingActionButton(
                         heroTag: "mytag7",
-                        child: Image.asset("assets/insta.png"),
+                        child: Image.asset("assets/s_2.png", height: 60,),
                         hoverColor: Colors.blue,
                         onPressed: () {
                           launchURL(
-                              "https://www.instagram.com/_the____viper_/");
+                              "https://www.instagram.com/_me_._shubham_/");
                         },
                         backgroundColor: Colors.transparent,
                         elevation: 0.0,
