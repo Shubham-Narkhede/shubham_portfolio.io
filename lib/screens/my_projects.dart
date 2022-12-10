@@ -27,7 +27,7 @@ class _MyProjects extends State<MyProjects> {
     super.initState();
   }
 
-  var projctsData = [];
+  List<dynamic>? projctsData = [];
 
   myProjectsData() async {
     var data =
@@ -74,9 +74,9 @@ class _MyProjects extends State<MyProjects> {
               child: SlideRightLeft(
                 child: Padding(
                   padding: EdgeInsets.all(15),
-                  child: FlatButton(
+                  child: TextButton(
                     onPressed: () {},
-                    hoverColor: Colors.red,
+                    // hoverColor: Colors.red,
                     child: Text(
                       "Projects!",
                       style: GoogleFonts.breeSerif(
@@ -102,7 +102,7 @@ class _MyProjects extends State<MyProjects> {
                           shrinkWrap: true,
 //                      physics: NeverScrollableScrollPhysics(),
                           scrollDirection: Axis.horizontal,
-                          itemCount: projctsData.length,
+                          itemCount: projctsData!.length,
                           itemBuilder: (BuildContext context, int index) {
                             return HoverEffect(
                                 child: InkWell(
@@ -123,11 +123,11 @@ class _MyProjects extends State<MyProjects> {
                                                   padding: EdgeInsets.only(
                                                       left: 10, right: 10),
                                                   child: HandCursor(
-                                                    child: FlatButton(
-                                                      hoverColor:
-                                                          Color(0xffCAB3D0),
+                                                    child: TextButton(
+                                                      // hoverColor:
+                                                      //     Color(0xffCAB3D0),
                                                       child: Text(
-                                                        projctsData[index]
+                                                        projctsData![index]
                                                             ['project_name'],
                                                         style: GoogleFonts
                                                             .josefinSans(
@@ -139,7 +139,7 @@ class _MyProjects extends State<MyProjects> {
                                                                     0xff33182F)),
                                                       ),
                                                       onPressed: () {
-                                                        launchURL(projctsData[
+                                                        launchURL(projctsData![
                                                                 index]
                                                             ['project_link']);
                                                       },
@@ -152,7 +152,7 @@ class _MyProjects extends State<MyProjects> {
                                                 padding: EdgeInsets.only(
                                                     left: 10, right: 10),
                                                 child: Text(
-                                                  projctsData[index]
+                                                  projctsData![index]
                                                       ['project_desc'],
                                                   style: GoogleFonts.roboto(
                                                       color: Color(0xff0073AA)),
@@ -168,7 +168,7 @@ class _MyProjects extends State<MyProjects> {
                                             width: width / 6,
                                             child: ClipRRect(
                                               child: Image.network(
-                                                  projctsData[index]
+                                                  projctsData![index]
                                                       ['project_image']),
                                               borderRadius:
                                                   BorderRadius.circular(15),
@@ -179,7 +179,7 @@ class _MyProjects extends State<MyProjects> {
                                     ),
                                   )),
                               onTap: () {
-                                launchURL(projctsData[index]['project_link']);
+                                launchURL(projctsData![index]['project_link']);
                               },
                             ));
                           },
@@ -195,7 +195,7 @@ class _MyProjects extends State<MyProjects> {
                       padding: EdgeInsets.only(right: 30, left: 30),
                       shrinkWrap: true,
                       scrollDirection: Axis.vertical,
-                      itemCount: projctsData.length,
+                      itemCount: projctsData!.length,
                       itemBuilder: (BuildContext context, int index) {
                         return Column(
                           children: [
@@ -216,7 +216,7 @@ class _MyProjects extends State<MyProjects> {
                                               margin: EdgeInsets.only(
                                                   top: 10, left: 6, bottom: 4),
                                               child: Text(
-                                                projctsData[index]
+                                                projctsData![index]
                                                     ['project_name'],
                                                 style: GoogleFonts.josefinSans(
                                                     fontSize: 20,
@@ -230,7 +230,7 @@ class _MyProjects extends State<MyProjects> {
                                                   left: 10, right: 10),
                                               child: SingleChildScrollView(
                                                 child: Text(
-                                                  projctsData[index]
+                                                  projctsData![index]
                                                       ['project_desc'],
                                                   style: GoogleFonts.roboto(
                                                       color:
@@ -244,7 +244,7 @@ class _MyProjects extends State<MyProjects> {
                                       Flexible(
                                         child: ClipRRect(
                                           child: Image.network(
-                                              projctsData[index]
+                                              projctsData![index]
                                                   ['project_image']),
                                           borderRadius:
                                               BorderRadius.circular(15),
@@ -264,16 +264,16 @@ class _MyProjects extends State<MyProjects> {
                                   TextButton(
                                       onPressed: () {
                                         launchURL(
-                                            projctsData[index]['project_link']);
+                                            projctsData![index]['project_link']);
                                       },
                                       child: Text("Android")),
                                   Container(
                                     width: 20,
                                   ),
-                                  if (projctsData[index]['ios'].isNotEmpty)
+                                  if (projctsData![index]['ios'].isNotEmpty)
                                     TextButton(
                                         onPressed: () {
-                                          launchURL(projctsData[index]['ios']);
+                                          launchURL(projctsData![index]['ios']);
                                         },
                                         child: Text("IOS"))
                                 ],

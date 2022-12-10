@@ -10,13 +10,13 @@ import 'package:url_launcher/url_launcher.dart';
 
 class MainPage extends StatelessWidget {
   int initialPage;
-  MainPage({@required this.initialPage});
+  MainPage({required this.initialPage});
 
   List<Widget> appbarAction(BuildContext context) {
     return <Widget>[
       HandCursor(
-        child: FlatButton(
-            hoverColor: Colors.blue.shade200,
+        child: TextButton(
+            // hoverColor: Colors.blue.shade200,
             onPressed: () {
               Navigator.push(
                 context,
@@ -38,8 +38,8 @@ class MainPage extends StatelessWidget {
         width: 10,
       ),
       HandCursor(
-        child: FlatButton(
-            hoverColor: Colors.blue.shade200,
+        child: TextButton(
+            // hoverColor: Colors.blue.shade200,
             onPressed: () {
               Navigator.push(
                 context,
@@ -61,8 +61,8 @@ class MainPage extends StatelessWidget {
         width: 10,
       ),
       HandCursor(
-        child: FlatButton(
-            hoverColor: Colors.blue.shade200,
+        child: TextButton(
+            // hoverColor: Colors.blue.shade200,
             onPressed: () {
               Navigator.push(
                 context,
@@ -84,8 +84,8 @@ class MainPage extends StatelessWidget {
         width: 10,
       ),
       HandCursor(
-        child: FlatButton(
-            hoverColor: Colors.blue.shade200,
+        child: TextButton(
+            // hoverColor: Colors.blue.shade200,
             onPressed: () {
               launchURL(
                   "https://firebasestorage.googleapis.com/v0/b/nfanfa-84d2e.appspot.com/o/ShubhamNarkhede.pdf?alt=media&token=08db6251-c55b-4e58-998d-384e67721233");
@@ -106,7 +106,7 @@ class MainPage extends StatelessWidget {
     }
   }
 
-  Widget myDrawer(BuildContext context) {
+  Widget? myDrawer(BuildContext context) {
     return ResponsiveWidget.issmallScreen(context)
         ? Drawer(
             child: ListView(children: appbarAction(context)),
@@ -145,11 +145,11 @@ class MainPage extends StatelessWidget {
 }
 
 class ScaleRoute extends PageRouteBuilder {
-  final Widget widget;
+  final Widget? widget;
   ScaleRoute({this.widget})
       : super(pageBuilder: (BuildContext context, Animation<double> animation,
             Animation<double> secondaryAnimation) {
-          return widget;
+          return widget!;
         }, transitionsBuilder: (BuildContext context,
             Animation<double> animation,
             Animation<double> secondaryAnimation,

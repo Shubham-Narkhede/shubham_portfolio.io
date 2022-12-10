@@ -60,9 +60,9 @@ class _AboutMe extends State<AboutMe> {
               child: SlideRightLeft(
                 child: Padding(
                   padding: EdgeInsets.all(15),
-                  child: FlatButton(
+                  child: TextButton(
                     onPressed: () {},
-                    hoverColor: Colors.red,
+                    // hoverColor: Colors.red,
                     child: Text(
                       "About me!",
                       style: GoogleFonts.breeSerif(

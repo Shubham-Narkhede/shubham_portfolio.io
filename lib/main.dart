@@ -10,7 +10,7 @@ void main() {
 
 class MyApp extends StatelessWidget {
   int initialPage;
-  MyApp({@required this.initialPage});
+  MyApp({required this.initialPage});
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
 
 class MyHomePage extends StatefulWidget {
   int initialPage;
-  MyHomePage({@required this.initialPage});
+  MyHomePage({required this.initialPage});
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }

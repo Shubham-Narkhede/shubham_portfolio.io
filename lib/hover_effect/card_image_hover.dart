@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class ImageHoverEffect extends StatefulWidget {
-  Widget child;
+  Widget? child;
   ImageHoverEffect({this.child});
   @override
   _ImageHoverEffectState createState() => _ImageHoverEffectState();

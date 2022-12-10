@@ -5,17 +5,17 @@ import 'package:flutter/material.dart';
 
 class ShowUp extends StatefulWidget {
   final Widget child;
-  final int delay;
+  final int? delay;
 
-  ShowUp({@required this.child, this.delay});
+  ShowUp({required this.child, this.delay});
 
   @override
   _ShowUpState createState() => _ShowUpState();
 }
 
 class _ShowUpState extends State<ShowUp> with TickerProviderStateMixin {
-  AnimationController _animController;
-  Animation<Offset> _animOffset;
+  late AnimationController _animController;
+  late Animation<Offset> _animOffset;
 
   @override
   void initState() {
@@ -32,7 +32,7 @@ class _ShowUpState extends State<ShowUp> with TickerProviderStateMixin {
     if (widget.delay == null) {
       _animController.forward();
     } else {
-      Timer(Duration(milliseconds: widget.delay), () {
+      Timer(Duration(milliseconds: widget.delay!), () {
         _animController.forward();
       });
     }

@@ -1,9 +1,9 @@
 import 'package:flutter/widgets.dart';
 
 class ResponsiveWidget extends StatelessWidget {
-  final Widget largeScreen;
-  final Widget mediumScreen;
-  final Widget smallScreen;
+  final Widget? largeScreen;
+  final Widget? mediumScreen;
+  final Widget? smallScreen;
   ResponsiveWidget({this.largeScreen, this.mediumScreen, this.smallScreen});
 
   static bool islargeScreen(BuildContext context) {
@@ -25,11 +25,11 @@ class ResponsiveWidget extends StatelessWidget {
     return LayoutBuilder(
       builder: (context, constraint) {
         if (constraint.maxWidth > 768) {
-          return largeScreen;
+          return largeScreen!;
         } else if (constraint.maxWidth > 425 && constraint.maxWidth < 1200) {
-          return mediumScreen ?? largeScreen;
+          return mediumScreen ?? largeScreen!;
         } else {
-          return smallScreen ?? largeScreen;
+          return smallScreen ?? largeScreen!;
         }
       },
     );

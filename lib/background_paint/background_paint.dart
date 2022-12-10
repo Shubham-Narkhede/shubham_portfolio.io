@@ -32,7 +32,7 @@ class BackgroundPainter extends CustomPainter {
 class CurvePainter extends CustomPainter {
   Color colorOne = Colors.blue;
   Color colorTwo = Colors.lightBlue;
-  Color colorThree = Colors.lightBlueAccent[100];
+  Color? colorThree = Colors.lightBlueAccent[100];
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -52,7 +52,7 @@ class CurvePainter extends CustomPainter {
         size.width * 0.70, size.height * 0.90, size.width, 0);
     path.close();
 
-    paint.color = colorThree;
+    paint.color = colorThree!;
     canvas.drawPath(path, paint);
 
     path = Path();

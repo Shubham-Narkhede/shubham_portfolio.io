@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class HoverEffect extends StatefulWidget {
-  Widget child;
+  Widget? child;
   HoverEffect({this.child});
   @override
   _HoverEffectState createState() => _HoverEffectState();

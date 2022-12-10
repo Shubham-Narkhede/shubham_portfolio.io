@@ -4,17 +4,17 @@ import 'package:flutter/material.dart';
 
 class SlideLeftRight extends StatefulWidget {
   final Widget child;
-  final int delay;
+  final int? delay;
 
-  SlideLeftRight({@required this.child, this.delay});
+  SlideLeftRight({required this.child, this.delay});
 
   @override
   _SlideLeftRightState createState() => _SlideLeftRightState();
 }
 
 class _SlideLeftRightState extends State<SlideLeftRight> with TickerProviderStateMixin {
-  AnimationController _animController;
-  Animation<Offset> _animOffset;
+  late AnimationController _animController;
+  late Animation<Offset> _animOffset;
 
   @override
   void initState() {
@@ -30,7 +30,7 @@ class _SlideLeftRightState extends State<SlideLeftRight> with TickerProviderStat
     if (widget.delay == null) {
       _animController.forward();
     } else {
-      Timer(Duration(seconds: widget.delay), () {
+      Timer(Duration(seconds: widget.delay!), () {
         _animController.forward();
       });
     }
