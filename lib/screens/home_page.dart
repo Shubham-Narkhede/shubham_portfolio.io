@@ -26,15 +26,9 @@ class _HomePage extends State<HomePage> {
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
-    return Scaffold(
-        body: Container(
+    return Container(
       height: height,
-      decoration: BoxDecoration(
-          image: DecorationImage(
-              image: AssetImage(
-                "assets/port_b.png",
-              ),
-              fit: BoxFit.fill)),
+      // decoration: decoration(),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -42,7 +36,7 @@ class _HomePage extends State<HomePage> {
           Text(
             "Hiii, I'm Shubham Narkhede!",
             style: GoogleFonts.averiaSansLibre(
-                color: Color(0Xff0073AA),
+                color: Colors.white,
                 fontSize: ResponsiveWidget.islargeScreen(context) ||
                         ResponsiveWidget.ismediumScreen(context)
                     ? 60
@@ -80,7 +74,30 @@ class _HomePage extends State<HomePage> {
                       textStyle: GoogleFonts.roboto(color: Colors.black),
                       child: FloatingActionButton(
                         heroTag: "mytag1",
-                        child: Image.asset("assets/github.png", color: Colors.white,),
+                        child: Stack(
+                          children: [
+                            Image.asset(
+                              "assets/github.png",
+                              color: Colors.white,
+                            ),
+                            Container(
+                              decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  shape: BoxShape.circle,
+                                  gradient: LinearGradient(
+                                      begin: FractionalOffset.topCenter,
+                                      end: FractionalOffset.bottomCenter,
+                                      colors: [
+                                        Colors.blue.withOpacity(0.0),
+                                        Colors.blue.shade500,
+                                      ],
+                                      stops: [
+                                        0.0,
+                                        1.0
+                                      ])),
+                            )
+                          ],
+                        ),
                         hoverColor: Colors.blue,
                         onPressed: () {
                           launchURL("https://github.com/Shubham-Narkhede");
@@ -98,7 +115,10 @@ class _HomePage extends State<HomePage> {
                       textStyle: GoogleFonts.roboto(color: Colors.black),
                       child: FloatingActionButton(
                         heroTag: "mytag2",
-                        child: Image.asset("assets/medium.png", color: Colors.white,),
+                        child: Image.asset(
+                          "assets/medium.png",
+                          color: Colors.white,
+                        ),
                         hoverColor: Colors.blue,
                         onPressed: () {
                           launchURL("https://medium.com/@shubham.narkhede8");
@@ -201,7 +221,10 @@ class _HomePage extends State<HomePage> {
                       textStyle: GoogleFonts.roboto(color: Colors.black),
                       child: FloatingActionButton(
                         heroTag: "mytag7",
-                        child: Image.asset("assets/s_2.png", height: 60,),
+                        child: Image.asset(
+                          "assets/s_2.png",
+                          height: 60,
+                        ),
                         hoverColor: Colors.blue,
                         onPressed: () {
                           launchURL(
@@ -216,6 +239,6 @@ class _HomePage extends State<HomePage> {
           ),
         ],
       ),
-    ));
+    );
   }
 }

@@ -118,26 +118,33 @@ class MainPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: myDrawer(context),
-      appBar: AppBar(
-        iconTheme: IconThemeData(color: Colors.black),
-        elevation: 0.0,
-        backgroundColor: Colors.white,
-        centerTitle: true,
-        title: Text(
-          "My Portfolio",
-          style: GoogleFonts.bitter(color: Colors.black),
-        ),
-        actions: !ResponsiveWidget.issmallScreen(context)
-            ? appbarAction(context)
-            : null,
-      ),
       body: Container(
-        child: PageView(
-          scrollDirection: Axis.vertical,
-          controller: PageController(
-            initialPage: initialPage,
-          ),
-          children: [HomePage(), AboutMe(), MyProjects()],
+        decoration: decoration(),
+        child: Column(
+          children: [
+            AppBar(
+              iconTheme: IconThemeData(color: Colors.white),
+              elevation: 0.0,
+              backgroundColor: Colors.transparent,
+              centerTitle: true,
+              title: Text(
+                "My Portfolio",
+                style: GoogleFonts.bitter(color: Colors.white),
+              ),
+              actions: !ResponsiveWidget.issmallScreen(context)
+                  ? appbarAction(context)
+                  : null,
+            ),
+            Expanded(
+              child: PageView(
+                scrollDirection: Axis.vertical,
+                controller: PageController(
+                  initialPage: initialPage,
+                ),
+                children: [HomePage(), AboutMe(), MyProjects()],
+              ),
+            ),
+          ],
         ),
       ),
     );

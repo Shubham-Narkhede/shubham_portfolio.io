@@ -7,13 +7,14 @@ import 'package:my_test_web_app/hover_effect/slide_left_right.dart';
 import 'package:my_test_web_app/hover_effect/slide_right_left.dart';
 import 'package:my_test_web_app/responsive_widget/responsive_widget.dart';
 
+import 'my_projects.dart';
+
 class AboutMe extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
     return _AboutMe();
   }
 }
-
 
 class _AboutMe extends State<AboutMe> {
   List<Widget> aboutMe(BuildContext context) {
@@ -24,7 +25,7 @@ class _AboutMe extends State<AboutMe> {
           child: Text(
             "Hello 👋 I'm Shubham Narkhede, mobile application developer. Having 3+ years of experience in software industry. In those year I completed almost 12-13 apps👑 which are currently live on app store and play store. Mainly I worked on Flutter technology but having experience of Android(java) as well. Also write articles related to flutter on Medium. And I would like to be part of an organization where I could use and enhance my knowledge and talent for the development of both the organization and myself. I liked to engage with people who likes to learn new new technologies.",
             style: GoogleFonts.breeSerif(
-                color: Colors.black,
+                color: Colors.white,
                 fontSize: !ResponsiveWidget.issmallScreen(context) ? 20 : 16),
           ),
         ),
@@ -40,58 +41,50 @@ class _AboutMe extends State<AboutMe> {
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
     Color textColor = Colors.black;
-    return Scaffold(
-      body: Container(
-        height: height,
-        decoration: BoxDecoration(
-            image: DecorationImage(
-                image: AssetImage(
-                  "assets/port_b.png",
-                ),
-                fit: BoxFit.fill)),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Container(
-              height:
-                  !ResponsiveWidget.issmallScreen(context) ? height * 0.1 : 1,
-            ),
-            HandCursor(
-              child: SlideRightLeft(
-                child: Padding(
-                  padding: EdgeInsets.all(15),
-                  child: TextButton(
-                    onPressed: () {},
-                    // hoverColor: Colors.red,
-                    child: Text(
-                      "About me!",
-                      style: GoogleFonts.breeSerif(
-                          color: textColor,
-                          decoration: TextDecoration.underline,
-                          fontSize: 24),
-                    ),
+    return Container(
+      height: height,
+      // decoration: decoration(),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Container(
+            height: !ResponsiveWidget.issmallScreen(context) ? height * 0.1 : 1,
+          ),
+          HandCursor(
+            child: SlideRightLeft(
+              child: Padding(
+                padding: EdgeInsets.all(15),
+                child: TextButton(
+                  onPressed: () {},
+                  // hoverColor: Colors.red,
+                  child: Text(
+                    "About me!",
+                    style: GoogleFonts.breeSerif(
+                        color: Colors.white,
+                        decoration: TextDecoration.underline,
+                        fontSize: 24),
                   ),
                 ),
-                delay: 1,
               ),
-            ),
-            SlideLeftRight(
-              child: Container(
-                  height: !ResponsiveWidget.issmallScreen(context)
-                      ? height / 1.5
-                      : height / 1.4,
-                  child: !ResponsiveWidget.issmallScreen(context)
-                      ? Row(
-                          children: aboutMe(context),
-                        )
-                      : Column(
-                          children: aboutMe(context),
-                        )),
               delay: 1,
             ),
-          ],
-        ),
+          ),
+          SlideLeftRight(
+            child: Container(
+                height: !ResponsiveWidget.issmallScreen(context)
+                    ? height / 1.5
+                    : height / 1.4,
+                child: !ResponsiveWidget.issmallScreen(context)
+                    ? Row(
+                        children: aboutMe(context),
+                      )
+                    : Column(
+                        children: aboutMe(context),
+                      )),
+            delay: 1,
+          ),
+        ],
       ),
     );
   }
