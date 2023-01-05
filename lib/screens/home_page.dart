@@ -37,8 +37,8 @@ class _HomePage extends State<HomePage> {
             "Hiii, I'm Shubham Narkhede!",
             style: GoogleFonts.averiaSansLibre(
                 color: Colors.white,
-                fontSize: ResponsiveWidget.islargeScreen(context) ||
-                        ResponsiveWidget.ismediumScreen(context)
+                fontSize: ResponsiveWidget.isLargeScreen(context) ||
+                        ResponsiveWidget.isMediumScreen(context)
                     ? 60
                     : 24,
                 fontWeight: FontWeight.bold),
@@ -47,12 +47,12 @@ class _HomePage extends State<HomePage> {
             height: height * 0.03,
           ),
           Container(
-            width: ResponsiveWidget.islargeScreen(context) ||
-                    ResponsiveWidget.ismediumScreen(context)
+            width: ResponsiveWidget.isLargeScreen(context) ||
+                    ResponsiveWidget.isMediumScreen(context)
                 ? width / 7
                 : width / 3,
-            height: ResponsiveWidget.islargeScreen(context) ||
-                    ResponsiveWidget.ismediumScreen(context)
+            height: ResponsiveWidget.isLargeScreen(context) ||
+                    ResponsiveWidget.isMediumScreen(context)
                 ? height / 3
                 : height / 3,
             child: VerticalCorrosual(),

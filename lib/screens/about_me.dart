@@ -26,7 +26,7 @@ class _AboutMe extends State<AboutMe> {
             "Hello 👋 I'm Shubham Narkhede, mobile application developer. Having 3+ years of experience in software industry. In those year I completed almost 12-13 apps👑 which are currently live on app store and play store. Mainly I worked on Flutter technology but having experience of Android(java) as well. Also write articles related to flutter on Medium. And I would like to be part of an organization where I could use and enhance my knowledge and talent for the development of both the organization and myself. I liked to engage with people who likes to learn new new technologies.",
             style: GoogleFonts.breeSerif(
                 color: Colors.white,
-                fontSize: !ResponsiveWidget.issmallScreen(context) ? 20 : 16),
+                fontSize: !ResponsiveWidget.isSmallScreen(context) ? 20 : 16),
           ),
         ),
       ),
@@ -40,16 +40,14 @@ class _AboutMe extends State<AboutMe> {
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
-    Color textColor = Colors.black;
     return Container(
       height: height,
-      // decoration: decoration(),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            height: !ResponsiveWidget.issmallScreen(context) ? height * 0.1 : 1,
+            height: !ResponsiveWidget.isSmallScreen(context) ? height * 0.1 : 1,
           ),
           HandCursor(
             child: SlideRightLeft(
@@ -57,7 +55,6 @@ class _AboutMe extends State<AboutMe> {
                 padding: EdgeInsets.all(15),
                 child: TextButton(
                   onPressed: () {},
-                  // hoverColor: Colors.red,
                   child: Text(
                     "About me!",
                     style: GoogleFonts.breeSerif(
@@ -72,10 +69,10 @@ class _AboutMe extends State<AboutMe> {
           ),
           SlideLeftRight(
             child: Container(
-                height: !ResponsiveWidget.issmallScreen(context)
+                height: !ResponsiveWidget.isSmallScreen(context)
                     ? height / 1.5
                     : height / 1.4,
-                child: !ResponsiveWidget.issmallScreen(context)
+                child: !ResponsiveWidget.isSmallScreen(context)
                     ? Row(
                         children: aboutMe(context),
                       )

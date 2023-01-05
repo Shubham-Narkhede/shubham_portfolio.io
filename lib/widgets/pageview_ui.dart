@@ -107,7 +107,7 @@ class MainPage extends StatelessWidget {
   }
 
   Widget? myDrawer(BuildContext context) {
-    return ResponsiveWidget.issmallScreen(context)
+    return ResponsiveWidget.isSmallScreen(context)
         ? Drawer(
             child: ListView(children: appbarAction(context)),
           )
@@ -131,7 +131,7 @@ class MainPage extends StatelessWidget {
                 "My Portfolio",
                 style: GoogleFonts.bitter(color: Colors.white),
               ),
-              actions: !ResponsiveWidget.issmallScreen(context)
+              actions: !ResponsiveWidget.isSmallScreen(context)
                   ? appbarAction(context)
                   : null,
             ),

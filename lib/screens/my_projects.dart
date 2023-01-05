@@ -61,7 +61,7 @@ class _MyProjects extends State<MyProjects> {
         mainAxisSize: MainAxisSize.max,
         children: [
           Container(
-            height: !ResponsiveWidget.issmallScreen(context) ? height * 0.1 : 1,
+            height: !ResponsiveWidget.isSmallScreen(context) ? height * 0.1 : 1,
           ),
           HandCursor(
             child: SlideRightLeft(
@@ -83,10 +83,10 @@ class _MyProjects extends State<MyProjects> {
             ),
           ),
           Container(
-            height: !ResponsiveWidget.issmallScreen(context)
+            height: !ResponsiveWidget.isSmallScreen(context)
                 ? height / 1.5
                 : height / 1.4,
-            child: !ResponsiveWidget.issmallScreen(context)
+            child: !ResponsiveWidget.isSmallScreen(context)
                 ? Center(
                     child: Container(
                       width: width / 1.1,
