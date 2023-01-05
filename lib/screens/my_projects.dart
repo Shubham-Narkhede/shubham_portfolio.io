@@ -51,7 +51,6 @@ class _MyProjects extends State<MyProjects> {
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
-    Color textColor = Colors.black;
     return Container(
       height: height,
       // decoration: decoration(),
@@ -86,70 +85,37 @@ class _MyProjects extends State<MyProjects> {
             height: !ResponsiveWidget.isSmallScreen(context)
                 ? height / 1.5
                 : height / 1.4,
-            child: !ResponsiveWidget.isSmallScreen(context)
+            child: ResponsiveWidget.isSmallScreen(context)
                 ? Center(
                     child: Container(
-                      width: width / 1.1,
-                      child: ListView.separated(
-                        padding: EdgeInsets.only(top: 100, bottom: 100),
+                      // height: height / 4,
+                      width: width,
+                      child: GridView.builder(
                         scrollDirection: Axis.horizontal,
                         itemCount: projctsData!.length,
+                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                            crossAxisCount: 2),
                         itemBuilder: (BuildContext context, int index) {
-                          return HoverEffect(
-                              child: Column(
+                          return Column(
                             children: [
+                              ImageHoverEffect(
+                                child: ClipRRect(
+                                  child: Image.network(
+                                    projctsData![index]['project_image'],
+                                    height: 200,
+                                  ),
+                                  borderRadius: BorderRadius.circular(15),
+                                ),
+                              ),
                               Container(
-                                height: height / 4,
-                                child: Row(
-                                  children: <Widget>[
-                                    Container(
-                                      width: width / 2,
-                                      child: Column(
-                                        mainAxisSize: MainAxisSize.min,
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: <Widget>[
-                                          Container(
-                                            margin: EdgeInsets.only(
-                                                top: 10, left: 6, bottom: 4),
-                                            child: Text(
-                                              projctsData![index]
-                                                  ['project_name'],
-                                              style: GoogleFonts.josefinSans(
-                                                  fontSize: 20,
-                                                  fontWeight: FontWeight.w600,
-                                                  color: Colors.white),
-                                            ),
-                                          ),
-                                          Expanded(
-                                              child: Padding(
-                                            padding: EdgeInsets.only(
-                                                left: 10, right: 10),
-                                            child: SingleChildScrollView(
-                                              child: Text(
-                                                projctsData![index]
-                                                    ['project_desc'],
-                                                style: GoogleFonts.roboto(
-                                                    color:
-                                                        Colors.grey.shade200),
-                                              ),
-                                            ),
-                                          ))
-                                        ],
-                                      ),
-                                    ),
-                                    Flexible(
-                                      child: ImageHoverEffect(
-                                        child: ClipRRect(
-                                          child: Image.network(
-                                              projctsData![index]
-                                                  ['project_image']),
-                                          borderRadius:
-                                              BorderRadius.circular(15),
-                                        ),
-                                      ),
-                                    ),
-                                  ],
+                                margin: EdgeInsets.only(
+                                    top: 10, left: 6, bottom: 4),
+                                child: Text(
+                                  projctsData![index]['project_name'],
+                                  style: GoogleFonts.josefinSans(
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.w600,
+                                      color: Colors.white),
                                 ),
                               ),
                               Container(
@@ -186,14 +152,124 @@ class _MyProjects extends State<MyProjects> {
                                 ),
                               )
                             ],
-                          ));
-                        },
-                        separatorBuilder: (BuildContext context, int index) {
-                          return Container(
-                            width: 10,
                           );
                         },
                       ),
+
+                      // ListView.separated(
+                      //   padding: EdgeInsets.only(top: 100, bottom: 100),
+                      //   scrollDirection: Axis.horizontal,
+                      //   itemCount: projctsData!.length,
+                      //   itemBuilder: (BuildContext context, int index) {
+                      //     return HoverEffect(
+                      //         child: Column(
+                      //       children: [
+                      // Container(
+                      //   margin: EdgeInsets.only(
+                      //       top: 10, left: 6, bottom: 4),
+                      //   child: Text(
+                      //     projctsData![index]['project_name'],
+                      //     style: GoogleFonts.josefinSans(
+                      //         fontSize: 20,
+                      //         fontWeight: FontWeight.w600,
+                      //         color: Colors.white),
+                      //   ),
+                      // ),
+                      //         // Container(
+                      //         //   height: height / 4,
+                      //         //   child: Column(
+                      //         //     children: <Widget>[
+                      //         //       Container(
+                      //         //          child: Column(
+                      //         //           mainAxisSize: MainAxisSize.min,
+                      //         //           crossAxisAlignment:
+                      //         //               CrossAxisAlignment.start,
+                      //         //           children: <Widget>[
+                      //         //             Container(
+                      //         //               margin: EdgeInsets.only(
+                      //         //                   top: 10, left: 6, bottom: 4),
+                      //         //               child: Text(
+                      //         //                 projctsData![index]
+                      //         //                     ['project_name'],
+                      //         //                 style: GoogleFonts.josefinSans(
+                      //         //                     fontSize: 20,
+                      //         //                     fontWeight: FontWeight.w600,
+                      //         //                     color: Colors.white),
+                      //         //               ),
+                      //         //             ),
+                      //         //             Expanded(
+                      //         //                 child: Padding(
+                      //         //               padding: EdgeInsets.only(
+                      //         //                   left: 10, right: 10),
+                      //         //               child: SingleChildScrollView(
+                      //         //                 child: Text(
+                      //         //                   projctsData![index]
+                      //         //                       ['project_desc'],
+                      //         //                   style: GoogleFonts.roboto(
+                      //         //                       color:
+                      //         //                           Colors.grey.shade200),
+                      //         //                 ),
+                      //         //               ),
+                      //         //             ))
+                      //         //           ],
+                      //         //         ),
+                      //         //       ),
+                      //         //       Flexible(
+                      //         // child: ImageHoverEffect(
+                      //         //   child: ClipRRect(
+                      //         //     child: Image.network(
+                      //         //         projctsData![index]
+                      //         //             ['project_image']),
+                      //         //     borderRadius:
+                      //         //         BorderRadius.circular(15),
+                      //         //   ),
+                      //         // ),
+                      //         //       ),
+                      //         //     ],
+                      //         //   ),
+                      //         // ),
+                      // Container(
+                      //   margin: EdgeInsets.only(left: 10, right: 10),
+                      //   decoration: BoxDecoration(
+                      //       color: Colors.blue.shade50,
+                      //       borderRadius: BorderRadius.circular(10)),
+                      //   child: Row(
+                      //     mainAxisAlignment: MainAxisAlignment.center,
+                      //     children: [
+                      //       TextButton(
+                      //           onPressed: () {
+                      //             launchURLAPp(projctsData![index]
+                      //                 ['project_link']);
+                      //           },
+                      //           child: Text("Android")),
+                      //       Container(
+                      //         width: 20,
+                      //       ),
+                      //       if (projctsData![index]['ios'].isNotEmpty)
+                      //         Center(
+                      //           child: TextButton(
+                      //               onPressed: () {
+                      //                 launchURLAPp(
+                      //                   projctsData![index]['ios'],
+                      //                 );
+                      //               },
+                      //               child: Text(
+                      //                 "IOS",
+                      //                 textAlign: TextAlign.center,
+                      //               )),
+                      //         )
+                      //     ],
+                      //   ),
+                      //         // )
+                      //       ],
+                      //     ));
+                      //   },
+                      //   separatorBuilder: (BuildContext context, int index) {
+                      //     return Container(
+                      //       width: 10,
+                      //     );
+                      //   },
+                      // ),
                     ),
                   )
                 : ListView.separated(

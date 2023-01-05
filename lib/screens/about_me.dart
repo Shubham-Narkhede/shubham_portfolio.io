@@ -19,21 +19,30 @@ class AboutMe extends StatefulWidget {
 class _AboutMe extends State<AboutMe> {
   List<Widget> aboutMe(BuildContext context) {
     return <Widget>[
+      if (ResponsiveWidget.isSmallScreen(context))
+        Expanded(
+            child: Padding(
+                padding: EdgeInsets.only(left: 15, right: 15, bottom: 15),
+                child: ImageHover())),
       Expanded(
+        flex: !ResponsiveWidget.isSmallScreen(context) ? 2 : 0,
         child: Padding(
           padding: EdgeInsets.all(15),
           child: Text(
             "Hello 👋 I'm Shubham Narkhede, mobile application developer. Having 3+ years of experience in software industry. In those year I completed almost 12-13 apps👑 which are currently live on app store and play store. Mainly I worked on Flutter technology but having experience of Android(java) as well. Also write articles related to flutter on Medium. And I would like to be part of an organization where I could use and enhance my knowledge and talent for the development of both the organization and myself. I liked to engage with people who likes to learn new new technologies.",
             style: GoogleFonts.breeSerif(
+                letterSpacing:
+                    ResponsiveWidget.isSmallScreen(context) ? 0.5 : 4,
                 color: Colors.white,
                 fontSize: !ResponsiveWidget.isSmallScreen(context) ? 20 : 16),
           ),
         ),
       ),
-      Expanded(
-          child: Padding(
-              padding: EdgeInsets.only(left: 15, right: 15, bottom: 15),
-              child: ImageHover())),
+      if (!ResponsiveWidget.isSmallScreen(context))
+        Expanded(
+            child: Padding(
+                padding: EdgeInsets.only(left: 15, right: 15, bottom: 15),
+                child: ImageHover())),
     ];
   }
 
