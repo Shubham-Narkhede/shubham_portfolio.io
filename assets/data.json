@@ -15,11 +15,25 @@
       "ios": "https://apps.apple.com/us/app/worshapp/id1499607116"
     },
     {
+      "project_name": "FMS App",
+      "project_desc": "This application is based on agribusinesses and their associated farmers, helping them in identifying and removing inefficiencies in their operations and also saving cost for the farmers.",
+      "project_image": "https://play-lh.googleusercontent.com/sYPux9iD41exPzPV1Kb0ZJAmuVRFp3hNVUHDMR_9V8hl8z8q_L_xqHQO0wRXG1mgkO1w=w240-h480-rw",
+      "project_link": "https://play.google.com/store/apps/details?id=com.vesatogo.fleet_app",
+      "ios": ""
+    },
+    {
       "project_name": "Shree Aniruddha acharya Ji Maharaj",
       "project_desc": "Shri Aniruddhacharya Ji Official this app is one of the Spiritual Application. In that we shows motivational quotes, videos articles etc. In that we added live youtube videos which explains Shree BhagwatGita etc. Also in that donate section for paying money to some NGO’s.",
       "project_image": "https://play-lh.googleusercontent.com/kt_7_4CkkLCCWmZk4MQDjebWx5PODa03B0MZOoQ4wiHtGF6jN3n52Cqm4M7tB71_SOI=w240-h480-rw",
       "project_link": "https://play.google.com/store/apps/details?id=shree.anirudhacharyaji.shreeanirudhacharyaji",
       "ios": "https://apps.apple.com/us/app/id1531754403"
+    },
+    {
+      "project_name": "Adam Companies – Technician App",
+      "project_desc": "The Technician app is app for technicians. This application is like a Urban Clap application. If  people facing any issues at there home, in water supply, in electic etc., Then they will add this issue in consumer app and then admin will assign some technicians for this service. Then technician will   send some quotation, then accept or decline this service. If accept then go to consumer home with the help of google map route. And complete this service",
+      "project_image": "https://play-lh.googleusercontent.com/HhQuE-rzv-Q4_-n_2V3ULltU3qcl6f7qHF-bWMvsDcpX6mtOKvYuNo4_NcSF2cV7HPY=w240-h480-rw",
+      "project_link": "https://play.google.com/store/apps/details?id=com.adamcompanies.technicianapp",
+      "ios": "https://apps.apple.com/us/app/adam-companies-technician/id1553281496"
     },
     {
       "project_name": "Posta-MikMik",
@@ -29,17 +43,10 @@
       "ios": "https://apps.apple.com/tt/app/posta-mikmik/id1602585405"
     },
     {
-      "project_name": "Adam Companies – Technician App",
-      "project_desc": "The Technician app is app for technicians. This application is like  a Urban Clap application. If people facing any issues at there home, in water supply, in electic etc., Then they will add this issue in consumer app and then admin will assign some technicians for this service. Then technician will send some quotation, then accept or decline this service. If accept then go to consumer home with the help of google map route. And complete this service.",
-      "project_image": "https://play-lh.googleusercontent.com/HhQuE-rzv-Q4_-n_2V3ULltU3qcl6f7qHF-bWMvsDcpX6mtOKvYuNo4_NcSF2cV7HPY=w240-h480-rw",
-      "project_link": "https://play.google.com/store/apps/details?id=com.adamcompanies.technicianapp",
-      "ios": "https://apps.apple.com/us/app/id1531754403"
-    },
-    {
-      "project_name": "FMS App",
-      "project_desc": "This application is based on agribusinesses and their associated farmers, helping them in identifying and removing inefficiencies in their operations and also saving cost for the farmers.",
-      "project_image": "https://play-lh.googleusercontent.com/sYPux9iD41exPzPV1Kb0ZJAmuVRFp3hNVUHDMR_9V8hl8z8q_L_xqHQO0wRXG1mgkO1w=w240-h480-rw",
-      "project_link": "https://play.google.com/store/apps/details?id=com.vesatogo.fleet_app",
+      "project_name": "TOGO App",
+      "project_desc": "Togo is a flagship product of Vesatogo which uberizes commercial vehicles in the rural setup. The primary users of the product are farmers, vehicle owners, and buyers. Through a mobile-based application, farmers are shown the market trends like rates, inward tonnage, and potential buyers for multiple market yards (organized & unorganized) in their vicinity. This tool enables them to make smart and informed decisions ensuring higher profitability",
+      "project_image": "https://play-lh.googleusercontent.com/O3GjHgz3pnRLG17FoUpnfLLCb_Y8SvLKdF42Q_oYVm5zDXGOmis-glkE0sqYFn3bLg=w240-h480-rw",
+      "project_link": "https://play.google.com/store/apps/details?id=com.vesatogo.togo",
       "ios": ""
     },
     {
